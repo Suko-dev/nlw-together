@@ -4,17 +4,17 @@
 
 - Cadastro de usuário
 
-    [ ] não é permitido cadastrar com e-mail repetido
+    [ x ] não é permitido cadastrar com e-mail repetido
 
-    [ ] não é permitido cadastrar um usuário sem e-mail
+    [ x ] não é permitido cadastrar um usuário sem e-mail
 
 - Cadastro de TAG
 
-    [ ] não é permitido duas tags com mesmo nome
+    [ x ] não é permitido duas tags com mesmo nome
 
-    [ ] não é permitido tag sem nome
+    [ x ] não é permitido tag sem nome
 
-    [ ] não é permitido cadastro por usuário não administrador
+    [ x ] não é permitido cadastro por usuário não administrador
 
 - Cadastro de elogio
 

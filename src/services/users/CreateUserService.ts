@@ -9,7 +9,7 @@ export class CreateUserService {
     }
     async execute({ name, email, admin }: CreateUserDTO): Promise<User> {
         if (!email) {
-            throw new Error("Must give a valid e-mail");
+            throw new Error("Must provide a valid e-mail");
         }
         const verifyEmail = await this.repository.findByEmail(email);
 
