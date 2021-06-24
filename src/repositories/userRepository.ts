@@ -10,8 +10,13 @@ export class UsersRepository {
         this.repository = getRepository(User);
     }
 
-    async create({ email, name, admin }: CreateUserDTO): Promise<User> {
-        const user = this.repository.create({ email, name, admin });
+    async create({
+        email,
+        name,
+        admin,
+        password,
+    }: CreateUserDTO): Promise<User> {
+        const user = this.repository.create({ email, name, admin, password });
         await this.repository.save(user);
         return user;
     }

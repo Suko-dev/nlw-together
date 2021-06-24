@@ -1,3 +1,5 @@
+import { hash } from "bcryptjs";
+
 import { User } from "../../entities/user";
 import { UsersRepository } from "../../repositories/userRepository";
 import { CreateUserDTO } from "../dtos/createUserDTO";
@@ -7,7 +9,12 @@ export class CreateUserService {
     constructor() {
         this.repository = new UsersRepository();
     }
-    async execute({ name, email, admin }: CreateUserDTO): Promise<User> {
+    async execute({
+        name,
+        email,
+        admin,
+        password,
+    }: CreateUserDTO): Promise<User> {
         if (!email) {
             throw new Error("Must provide a valid e-mail");
         }
@@ -16,7 +23,12 @@ export class CreateUserService {
         if (verifyEmail) {
             throw new Error("User already exists");
         }
-
-        return this.repository.create({ name, email, admin });
+        const hashPassword = await hash(password, 8);
+        return this.repository.create({
+            name,
+            email,
+            admin,
+            password: hashPassword,
+        });
     }
 }

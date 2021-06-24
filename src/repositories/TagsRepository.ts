@@ -18,4 +18,8 @@ export class TagsRepository {
     async findByName(name: string): Promise<Tag | undefined> {
         return this.repository.findOne({ name });
     }
+
+    async findById(id: string): Promise<Tag | undefined> {
+        return this.repository.findOne({ id });
+    }
 }
