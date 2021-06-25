@@ -22,4 +22,8 @@ export class TagsRepository {
     async findById(id: string): Promise<Tag | undefined> {
         return this.repository.findOne({ id });
     }
+
+    async list(): Promise<Tag[]> {
+        return this.repository.find();
+    }
 }

@@ -6,10 +6,7 @@ export class CreateTagsService {
     constructor() {
         this.repository = new TagsRepository();
     }
-    async execute(name: string, admin: boolean): Promise<Tag> {
-        if (!admin) {
-            throw new Error("user must be admin");
-        }
+    async execute(name: string): Promise<Tag> {
         if (!name) {
             throw new Error("Must provide a valid tag");
         }

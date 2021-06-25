@@ -33,4 +33,18 @@ export class ComplimentsRepository {
         await this.repository.save(compliment);
         return compliment;
     }
+
+    async listReciever(id: string): Promise<Compliment[]> {
+        return this.repository.find({
+            where: { reciever: id },
+            relations: ["tag", "sender", "reciever"],
+        });
+    }
+
+    async listSender(id: string): Promise<Compliment[]> {
+        return this.repository.find({
+            where: { sender: id },
+            relations: ["tag", "sender", "reciever"],
+        });
+    }
 }

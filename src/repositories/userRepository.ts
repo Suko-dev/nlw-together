@@ -28,4 +28,8 @@ export class UsersRepository {
     async findById(id: string): Promise<User> {
         return this.repository.findOneOrFail({ id });
     }
+
+    async list(): Promise<User[]> {
+        return this.repository.find();
+    }
 }

@@ -1,3 +1,4 @@
+import { Exclude, Expose } from "class-transformer";
 import {
     Column,
     CreateDateColumn,
@@ -12,6 +13,7 @@ export class Tag {
     @PrimaryColumn()
     readonly id: string;
 
+    @Exclude()
     @Column()
     name: string;
 
@@ -20,6 +22,11 @@ export class Tag {
 
     @UpdateDateColumn()
     updated_at: Date;
+
+    @Expose({ name: "name" })
+    customName(): string {
+        return `#${this.name}`;
+    }
 
     constructor() {
         if (!this.id) {

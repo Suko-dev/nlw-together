@@ -23,7 +23,7 @@ export = async (
         if (!user) {
             throw new Error("user not found");
         }
-        request.user = { id: String(sub), admin: user.admin };
+        request.user = { id: String(sub) };
 
         next();
     } catch (error) {
