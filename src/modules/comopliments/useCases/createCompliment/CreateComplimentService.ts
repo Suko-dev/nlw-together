@@ -1,11 +1,11 @@
 import { classToClass } from "class-transformer";
 import { inject, injectable } from "tsyringe";
 
-import { TagsRepository } from "../../../../tags/infra/repositories/TagsRepository";
-import { UsersRepository } from "../../../../user/infra/repositories/userRepository";
-import { ICreateComplimentDto } from "../../../dtos/CreateComplimentDTO";
-import { Compliment } from "../../../infra/entities/Compliments";
-import { ComplimentsRepository } from "../../../infra/repositories/ComplimentsRepository";
+import { TagsRepository } from "../../../tags/infra/repositories/TagsRepository";
+import { UsersRepository } from "../../../user/infra/repositories/userRepository";
+import { ICreateComplimentDto } from "../../dtos/CreateComplimentDTO";
+import { Compliment } from "../../infra/entities/Compliments";
+import { ComplimentsRepository } from "../../infra/repositories/ComplimentsRepository";
 
 @injectable()
 export class CreateComplimentService {

@@ -13,17 +13,17 @@ const listRecieverComplimentController =
 const listSenderComplimentController = new ListSenderComplimentsController();
 
 complimentsRouter.post(
-    "/compliments/:recieverId",
+    "/:recieverId",
     Authenticate,
     createComplimentController.handle
 );
 complimentsRouter.get(
-    "/compliments/sent",
+    "/sent",
     Authenticate,
     listSenderComplimentController.handle
 );
 complimentsRouter.get(
-    "/compliments/recieved",
+    "/recieved",
     Authenticate,
     listRecieverComplimentController.handle
 );
