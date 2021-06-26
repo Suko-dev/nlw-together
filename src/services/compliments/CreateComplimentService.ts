@@ -1,3 +1,5 @@
+import { classToClass } from "class-transformer";
+
 import { Compliment } from "../../entities/Compliments";
 import { ComplimentsRepository } from "../../repositories/ComplimentsRepository";
 import { TagsRepository } from "../../repositories/TagsRepository";
@@ -32,11 +34,13 @@ export class CreateComplimentService {
         if (!tag) {
             throw new Error("Tag Not found");
         }
-        return this.complimentsRepository.create({
-            message,
-            tag,
-            sender,
-            reciever,
-        });
+        return classToClass(
+            this.complimentsRepository.create({
+                message,
+                tag,
+                sender,
+                reciever,
+            })
+        );
     }
 }

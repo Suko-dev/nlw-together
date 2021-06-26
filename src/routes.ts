@@ -31,7 +31,11 @@ router.get("/users", Authenticate, listUsersController.handle);
 router.post("/tags", Authenticate, IsAdmin, createTagsController.handle);
 router.get("/tags", listTagsController.handle);
 
-router.post("/compliments", Authenticate, createComplimentController.handle);
+router.post(
+    "/compliments/:recieverId",
+    Authenticate,
+    createComplimentController.handle
+);
 router.get(
     "/compliments/sent",
     Authenticate,

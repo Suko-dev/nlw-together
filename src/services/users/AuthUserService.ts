@@ -1,5 +1,5 @@
 import { compare } from "bcryptjs";
-import { classToPlain } from "class-transformer";
+import { classToClass } from "class-transformer";
 import { sign } from "jsonwebtoken";
 
 import { User } from "../../entities/user";
@@ -7,7 +7,7 @@ import { UsersRepository } from "../../repositories/userRepository";
 import { AuthUserDTO } from "../dtos/AuthUserDTO";
 
 type IResponse = {
-    user: any;
+    user: User;
     token: string;
 };
 export class AuthUserService {
@@ -29,6 +29,6 @@ export class AuthUserService {
             "24e9435417039a1919f6fafcfc8ca330",
             { subject: user.id, expiresIn: "1d" }
         );
-        return { user: classToPlain(user), token };
+        return { user: classToClass(user), token };
     }
 }

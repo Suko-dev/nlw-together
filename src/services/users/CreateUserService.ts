@@ -1,6 +1,7 @@
 import { hash } from "bcryptjs";
-import { classToPlain } from "class-transformer";
+import { classToClass } from "class-transformer";
 
+import { User } from "../../entities/user";
 import { UsersRepository } from "../../repositories/userRepository";
 import { CreateUserDTO } from "../dtos/createUserDTO";
 
@@ -9,7 +10,12 @@ export class CreateUserService {
     constructor() {
         this.repository = new UsersRepository();
     }
-    async execute({ name, email, admin, password }: CreateUserDTO) {
+    async execute({
+        name,
+        email,
+        admin,
+        password,
+    }: CreateUserDTO): Promise<User> {
         if (!email) {
             throw new Error("Must provide a valid e-mail");
         }
@@ -26,6 +32,6 @@ export class CreateUserService {
             password: hashPassword,
         });
 
-        return classToPlain(user);
+        return classToClass(user);
     }
 }
