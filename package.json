@@ -4,7 +4,7 @@
     "description": "Base repository for node/express projects",
     "main": "index.js",
     "scripts": {
-        "dev": "ts-node-dev --respawn --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+        "dev": "ts-node-dev --respawn --inspect --transpile-only --ignore-watch node_modules src/shared/http/app.ts",
         "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
     },
     "keywords": [],
@@ -18,6 +18,7 @@
         "jsonwebtoken": "^8.5.1",
         "reflect-metadata": "^0.1.13",
         "sqlite3": "^5.0.2",
+        "tsyringe": "^4.5.0",
         "typeorm": "^0.2.34",
         "uuid": "^8.3.2"
     },
@@ -28,6 +29,7 @@
         "@types/uuid": "^8.3.0",
         "@typescript-eslint/eslint-plugin": "^4.22.1",
         "@typescript-eslint/parser": "^4.22.1",
+        "dotenv": "^10.0.0",
         "eslint": "^7.29.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-config-prettier": "^8.3.0",

@@ -1,9 +1,9 @@
 {
     "type": "sqlite",
-    "database":"src/database/database.sqlite",
-    "entities":["src/entities/*.ts"],
-    "migrations":["src/database/migrations/*.ts"],
+    "database":"src/shared/database/database.sqlite",
+    "entities":["src/modules/**/infra/entities/*.ts"],
+    "migrations":["src/shared/database/migrations/*.ts"],
     "cli":{
-        "migrationsDir":"src/database/migrations"
+        "migrationsDir":"src/shared/database/migrations"
     }
 }
