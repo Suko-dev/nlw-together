@@ -1,8 +1,8 @@
 {
     "type": "sqlite",
     "database":"src/shared/database/database.sqlite",
-    "entities":["src/modules/**/infra/entities/*.ts"],
-    "migrations":["src/shared/database/migrations/*.ts"],
+    "entities":["src/modules/**/infra/entities/*.ts","dist/modules/**/infra/entities/*.js"],
+    "migrations":["src/shared/database/migrations/*.ts","dist/shared/database/migrations/*.js"],
     "cli":{
         "migrationsDir":"src/shared/database/migrations"
     }

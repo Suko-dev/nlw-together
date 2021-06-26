@@ -4,6 +4,8 @@
     "description": "Base repository for node/express projects",
     "main": "index.js",
     "scripts": {
+        "build": "tsc",
+        "start": "node dist/shared/http/app.js",
         "dev": "ts-node-dev --respawn --inspect --transpile-only --ignore-watch node_modules src/shared/http/app.ts",
         "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
     },
